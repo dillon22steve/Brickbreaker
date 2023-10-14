@@ -5,10 +5,10 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
+
+//This class was written by Steve
 public class Paddle extends Rectangle {
 	
-	private int width;
-	private int height;
 	private int xPos;
 	private int yPos;
 	private Color myGray = new Color(207, 207, 207);
@@ -24,28 +24,20 @@ public class Paddle extends Rectangle {
 		height = 30;
 		right = false;
 		left = false;
-	}
+	} //constructor
 	
 	public int getXPos() {
 		return xPos;
-	}
+	} //getXPos
 
 	public int getYPos() {
 		return yPos;
-	}
-
-	public int getTheWidth() {
-		return width;
-	}
-
-	public int getTheHeight() {
-		return height;
-	}
+	} //getYPos
 	
 	public void draw(Graphics g) {
 		g.setColor(myGray);
 		g.fillRect(xPos, yPos, width, height);
-	}
+	} //draw
 
 	
 	public void updatePos() {
@@ -53,22 +45,22 @@ public class Paddle extends Rectangle {
 			xPos -= 3.0f;
 		} else if (right && !left) {
 			xPos += 3.0f;
-		}
+		} //if
 		
 		if(xPos < 0) {
 			xPos = 0;
 		} else if (xPos > 850) {
 			xPos = 850;
-		}
-	}
+		} //if
+	} //updatePos
 
 
 	public void setRight(boolean right) {
 		this.right = right;
-	}
+	} //setRight
 
 	public void setLeft(boolean left) {
 		this.left = left;
-	}
-}
+	} //setLeft
+} //Paddle
 

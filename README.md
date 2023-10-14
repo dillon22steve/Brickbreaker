@@ -1,2 +1,3 @@
 # Brickbreaker
-This was a project me and a group of two other students worked on my freshman year in CodeHub. We submitted the project and won first place.
+This was a project me and two other students worked on my freshman year at UGA for a contest run by CodeHub.
+We submitted the project and won first place.

@@ -1,4 +1,5 @@
 
+//This class was written by Steve and Chase
 public class Driver {
         
     static boolean newGame = false;
@@ -15,22 +16,21 @@ public class Driver {
             if (now - lastCheck >= timePerCheck) {
                 System.out.println("Checking");
                 lastCheck = now;
-            }
+            } //if
 
             if (newGame) {
                 runGame();
                 setNewGame(false);
-            }
-        }
-    }
+            } //if
+        } //while
+    } //main
 
     public static void setNewGame(boolean b) {
         newGame = b;
-    }
+    } //setNewGame
 
     public static void runGame() {
         Game game = new Game();
-        System.out.println("run game success");
-    }
+    } //runGame
 
-}
+} //Driver

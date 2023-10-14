@@ -18,10 +18,10 @@ public class Brick extends Rectangle {
 
     public int getRow() {
         return brickRow;
-    }
+    } //getRow
 
     public int getCol() {
         return brickColumn;
-    }
+    } //getCol
 
 } // Brick

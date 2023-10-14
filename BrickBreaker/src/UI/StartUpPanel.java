@@ -12,6 +12,7 @@ import java.awt.event.KeyEvent;
 import Objects.Paddle;
 import Objects.BrickArray;
 
+//This class was written by Chase and Colton, except for the Opacity update, which was written by Steve.
 public class StartUpPanel extends JPanel {
 
     BrickArray brickArray = new BrickArray();
@@ -31,30 +32,36 @@ public class StartUpPanel extends JPanel {
             case KeyEvent.VK_ENTER:
                 gameStart = true;
                 break;
-        }
-    }
+        } //switch
+    } //startGameKey
 
+
+    //written by Steve
     public void updateOpacity() {
         if (opacity < 0) {
             opacity = 0;
             opacityUpdate *= -1;
         } else if (opacity > 68) {
-            System.out.println("Updated Opacity");
             opacity = 68;
             opacityUpdate *= -1;
-        }
+        } //if
 
         opacity -= opacityUpdate;
-    }
+    } //updateOpacity
+
 
     public boolean getGameStart() {
         return gameStart; 
-    }
+    } //getGameStart
+
 
     public void setGameStart(boolean b) {
         gameStart = b;
-    }
+    } //setGameStart
 
+
+    //Written by Chase and Coloton, updated by Steve to add the opacity updates to the
+    //"Press enter to start".
     public void paintComponent(Graphics g) {
         super.paintComponent(g); 
         String title = "BRICKBREAKER";
@@ -63,10 +70,10 @@ public class StartUpPanel extends JPanel {
             String lastLetter = "";
             if (i != 0) {
                 lastLetter = title.substring(i - 1, i);
-             }
-           if (lastLetter.equals("I")) {
+             } //if
+            if (lastLetter.equals("I")) {
                 foundI = true; 
-           }
+            } //if
             if (i % 2 == 0) {
                 g.setColor(Color.white);
                 g.setFont(new Font ("Monospaced Bold",1,125));
@@ -74,7 +81,7 @@ public class StartUpPanel extends JPanel {
                     g.drawString(title.substring(i, i + 1), -25 + (80 * i),  375);
                 } else {
                     g.drawString(title.substring(i, i + 1), 25 + (80 * i),  375);
-                }
+                } //if
                 
             } else {
                 g.setColor(Color.gray);
@@ -83,9 +90,9 @@ public class StartUpPanel extends JPanel {
                     g.drawString(title.substring(i, i + 1), -25 + (80* i),  375);
                 } else {
                     g.drawString(title.substring(i, i + 1), 25 + (80* i),  375);
-                }
+                } //if
                 
-            }
+            } //if
             g.setColor(Color.yellow);
             g.setFont(new Font ("Arial", 1, 25));
 
@@ -94,8 +101,8 @@ public class StartUpPanel extends JPanel {
 
             brickArray.spawnBricks(g);
             paddle.draw(g);
-        }
+        } //for
         
     } //painComponent
 
-}
+} //StartUpPanel
